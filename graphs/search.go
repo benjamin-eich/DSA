@@ -1,6 +1,6 @@
 package graphs
 
-import "DSA/queues"
+import "github.com/benjamin-eich/DSA/queues"
 
 func Bfs[T comparable](graph *Graph[T], start T) []T {
 	visited := make(map[T]bool)
