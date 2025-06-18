@@ -1,5 +1,10 @@
 package dynamic_programming
 
+/*
+A common interview question asks: "How many distinct ways can you climb a staircase with n steps, given that you can
+take either 1 or 2 steps at a time?" This problem can be solved with both recursion and dynamic programming.
+*/
+
 func JumpBottomUp(n int) int {
 	jumps := map[int]int{
 		0: 1,
