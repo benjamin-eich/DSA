@@ -28,4 +28,10 @@ func TestTrie(t *testing.T) {
 	if trie.Search("app") != true {
 		t.Error("trie should contain app but Search() returned false")
 	}
+
+	trie.Delete("apple")
+
+	if trie.Search("app") != true {
+		t.Error("trie should contain app but Search() returned false")
+	}
 }

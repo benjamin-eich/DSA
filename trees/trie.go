@@ -60,3 +60,23 @@ func (t *Trie) StartsWith(word string) bool {
 
 	return false
 }
+
+func (t *Trie) Delete(word string) {
+	t.delete(word, word)
+}
+
+func (t *Trie) delete(word, original string) bool {
+	if len(word) == 0 {
+		return true
+	}
+
+	first := string(word[0])
+	continueDelete := false
+	if child, ok := t.children[first]; ok {
+		continueDelete = child.delete(word[1:], original) && (child.Value == "" || child.Value == original)
+		if continueDelete {
+			t.children[first] = nil
+		}
+	}
+	return continueDelete
+}
